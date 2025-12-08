@@ -1,9 +1,3 @@
-[1 tool called]
-
-¡Excelente pregunta! Este archivo es una joya educativa. Contiene múltiples conceptos de **Programación Orientada a Objetos (POO)** y principios de diseño de software. Te los voy a explicar todos de forma profunda, con el **"por qué"** de cada uno.
-
----
-
 # 📚 GUÍA COMPLETA DE CONCEPTOS DE POO
 
 ## 1. ABSTRACCIÓN
