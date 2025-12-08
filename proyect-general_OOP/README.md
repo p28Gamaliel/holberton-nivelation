@@ -179,7 +179,6 @@ Este conocimiento profundo es transferible a cualquier lenguaje de programación
 1. **Comienza con `OOP_DOCUMENTACION.md`** - Lee los conceptos teóricos
 2. **Consulta `resumen.md`** - Ve los conceptos aplicados a código real
 3. **Experimenta con `example.py`** - Modifica y ejecuta los ejemplos
-4. **Toma notas en `note.md`** - Agrega tus propias observaciones
 
 ---
 
