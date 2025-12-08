@@ -197,7 +197,7 @@ Este proyecto es de uso educativo y personal. Siéntete libre de usar el conteni
 
 <div align="center">
 
-**Proyecto de Nivelación - Holberton School**
+**Proyecto de Aprendizaje**
 
 *Aprender a programar es aprender a pensar.*
 
