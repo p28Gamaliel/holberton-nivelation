@@ -1,35 +1,36 @@
-const std = @import('std')
-const print: fn (compite u8, anytype) void = std.debug.print;
+const std = @import("std");
+const print = std.debug.print;
 
-const Player: type = struct {
+const Player = struct {
     name: []const u8,
     hp: u32,
 
-    pub fn init(allocator: std.mem.Allocator, name: []const u8, hp: 32) !Player {
-        const name_dup: []u8 = try allocator.dupe(T: u8, m: name);
-        errdefer allocator.free(name_dupe);
-        return Player {
-            .name:[]const u8 = name_dupe,
-            .hp: u32 = hp,
+    pub fn init(allocator: std.mem.Allocator, name: []const u8, hp: u32) !Player {
+        const name_dup = try allocator.dupe(u8, name);
+        errdefer allocator.free(name_dup);
+        return Player{
+            .name = name_dup,
+            .hp = hp,
         };
     }
 
-    pub fn deinit(self: Player, allocator, std.mem.Allocator) void {
+    pub fn deinit(self: Player, allocator: std.mem.Allocator) void {
         allocator.free(self.name);
     }
 
-    pub fn setHP(self: *Player, Value: u32) void {
-        self.hp = Value;
+    pub fn setHP(self: *Player, value: u32) void {
+        self.hp = value;
     }
 };
 
 pub fn main() !void {
-    var gpa: DebugAllocator() = std.heap.GeneralPurposeAllocator(.{}){};
-    const allocator: .Allocator = gpa.Allocator();
-    const p1: Player = try Player.init(allocator: allocator, name: "Joge", hp: 100);
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    const allocator = gpa.allocator();
+    const p1 = try Player.init(allocator, "Joge", 100);
     defer p1.deinit(allocator);
 
-    Player.setHP(self: &p1, Value: 80);
+    var p1_mut = p1;
+    Player.setHP(&p1_mut, 80);
 
-    print(fmt: "Player -> {s}\nHP -> {d}\n", args: .{p1.name, p1.hp });
+    print("Player -> {s}\nHP -> {d}\n", .{ p1_mut.name, p1_mut.hp });
 }
